@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP_HW3
+namespace AbrahaG.Game
 {
     class Program
     {
         static void Main(string[] args)
         {
+            GameState Game = new GameState(30);
+            Game.Loop();
         }
     }
 }

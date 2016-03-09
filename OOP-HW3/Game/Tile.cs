@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AbrahaG.Game
 {
-    class Tile
+    public class Tile
     {
         //Our "image" for the tile. Represented by an int for now
         private int Image;

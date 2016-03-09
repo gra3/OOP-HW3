@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="Game\Armor.cs" />
     <Compile Include="Game\Enemy.cs" />
-    <Compile Include="Game\Game.cs" />
+    <Compile Include="Game\GameState.cs" />
     <Compile Include="Game\Map.cs" />
     <Compile Include="Game\Player.cs" />
     <Compile Include="Game\Tile.cs" />
@@ -51,7 +51,9 @@
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
