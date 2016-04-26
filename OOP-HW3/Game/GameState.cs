@@ -11,8 +11,9 @@ namespace AbrahaG.Game
         public GameState(int mapSize)
         {
             Map = new Map(mapSize);
-            Player = new Player();
+            Player = new Player(Map);
             Enemy = new Enemy("Boar", mapSize);
+
         }
 
         public bool IsDone
@@ -51,6 +52,7 @@ namespace AbrahaG.Game
                             break;
                     }
                     Player.PrintPos();
+                    Map.Draw();
                 }
             }
 

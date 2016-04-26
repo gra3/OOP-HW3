@@ -10,7 +10,7 @@ namespace AbrahaG.Game
     {
         static void Main(string[] args)
         {
-            GameState Game = new GameState(30);
+            GameState Game = new GameState(15);
             Game.Loop();
         }
     }

@@ -11,6 +11,8 @@ namespace AbrahaG.Game
         //Our "image" for the tile. Represented by an int for now
         private int Image;
 
+        public char Content { get; set; }
+
         //Flag for whether or not moving objects can pass through it
         private bool Passable { get; set; }
 
@@ -18,6 +20,7 @@ namespace AbrahaG.Game
         {
             Image = image;
             Passable = passable;
+            Content = ' ';
         }
     }
 }

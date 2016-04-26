@@ -11,7 +11,6 @@ namespace AbrahaG.Game
     {
         //Contains all the tiles for the Map
         public List<List<Tile>> tileArray;
-        public List<ArrayList> objectMap;
 
         public int MapSize { get; set; }
 
@@ -29,22 +28,29 @@ namespace AbrahaG.Game
                     tileArray[i].Add(new Tile(0, true));
                 }
             }
-
-            objectMap = new List<ArrayList> { };
-
-            for (int i = 0; i < MapSize; i++)
-            {
-                objectMap.Add(new ArrayList { });
-                for (int j = 0; j < MapSize; j++)
-                {
-                    objectMap[i].Add(null);
-                }
-            }
         }
 
         public void Draw()
         {
-            throw new NotImplementedException();
+            System.Console.Write('_');
+            for (int i = 0; i < tileArray.Count; i++) System.Console.Write('_');
+            System.Console.Write('_');
+            System.Console.WriteLine();
+
+            for (int i = 0; i < tileArray.Count; i++)
+            {
+                System.Console.Write("|");
+                for (int j = 0; j < tileArray.Count; j++)
+                {
+                    System.Console.Write(tileArray[i][j].Content);
+                }
+                System.Console.WriteLine("|");
+            }
+
+            System.Console.Write('_');
+            for (int i = 0; i < tileArray.Count; i++) System.Console.Write('_');
+            System.Console.Write('_');
+            System.Console.WriteLine();
         }
     }
 }
