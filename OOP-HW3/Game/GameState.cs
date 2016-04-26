@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace AbrahaG.Game
 {
@@ -14,7 +15,7 @@ namespace AbrahaG.Game
             Player = new Player(Map);
             Enemy = new Enemy("Boar", mapSize);
             Screen = new MainScreen();
-
+            Input = new ConsoleInput();
         }
 
         public bool IsDone
@@ -22,6 +23,8 @@ namespace AbrahaG.Game
             get;
             internal set;
         }
+
+        public Input Input { get; set; }
 
         public Map Map { get; set; }
 
@@ -34,29 +37,13 @@ namespace AbrahaG.Game
         public void Loop()
         {
             Screen.Draw();
-            Screen = new GameScreen(Map);
+            Screen = new GameScreen(Map,Player);
+            Screen.AttachInput(Input);
             for (; ; )
             {
-                if (Console.KeyAvailable)
-                {
-                    var key = Console.ReadKey();
-                    switch (key.Key)
-                    {
-                        case ConsoleKey.UpArrow:
-                            Player.MoveUp(Map.MapSize);
-                            break;
-                        case ConsoleKey.DownArrow:
-                            Player.MoveDown(Map.MapSize);
-                            break;
-                        case ConsoleKey.LeftArrow:
-                            Player.MoveLeft(Map.MapSize);
-                            break;
-                        case ConsoleKey.RightArrow:
-                            Player.MoveRight(Map.MapSize);
-                            break;
-                    }
-                    Screen.Draw();
-                }
+                Input.getInput();
+                Screen.Draw();
+                Thread.Sleep(50); //limit "FPS"
             }
 
 
