@@ -22,9 +22,9 @@ namespace AbrahaG.Game
         public MainScreen()
             : base()
         {
-            Options = new List<string> {"New Game",
+            Options = new List<string> {"New Game - Any key",
                                         "Load Game - N/A",
-                                        "Exit"};
+                                        "Exit - N/A"};
         }
 
         public override void Draw()
