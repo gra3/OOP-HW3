@@ -13,6 +13,7 @@ namespace AbrahaG.Game
             Map = new Map(mapSize);
             Player = new Player(Map);
             Enemy = new Enemy("Boar", mapSize);
+            Screen = new MainScreen();
 
         }
 
@@ -28,9 +29,12 @@ namespace AbrahaG.Game
 
         public Enemy Enemy { get; set; }
 
+        public Screen Screen { get; set; }
+
         public void Loop()
         {
-
+            Screen.Draw();
+            Screen = new GameScreen(Map);
             for (; ; )
             {
                 if (Console.KeyAvailable)
@@ -51,8 +55,7 @@ namespace AbrahaG.Game
                             Player.MoveRight(Map.MapSize);
                             break;
                     }
-                    Player.PrintPos();
-                    Map.Draw();
+                    Screen.Draw();
                 }
             }
 
