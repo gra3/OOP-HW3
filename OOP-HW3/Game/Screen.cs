@@ -107,7 +107,7 @@ namespace AbrahaG.Game
 
         public override void OnDown(object source, EventArgs args)
         {
-            Player.MoveDown(15);
+            Player.MoveDown(Map.MapSize);
         }
 
         public override void OnLeft(object source, EventArgs args)
