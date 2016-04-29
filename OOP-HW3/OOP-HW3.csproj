@@ -42,14 +42,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Game\Armor.cs" />
+    <Compile Include="Game\ConsoleOutput.cs" />
     <Compile Include="Game\Enemy.cs" />
+    <Compile Include="Game\GameScreen.cs" />
     <Compile Include="Game\GameState.cs" />
     <Compile Include="Game\Input.cs" />
+    <Compile Include="Game\MainScreen.cs" />
     <Compile Include="Game\Map.cs" />
     <Compile Include="Game\Player.cs" />
     <Compile Include="Game\Screen.cs" />
     <Compile Include="Game\Tile.cs" />
     <Compile Include="Game\Weapon.cs" />
+    <Compile Include="Output.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -16,6 +16,7 @@ namespace AbrahaG.Game
             Enemy = new Enemy("Boar", mapSize);
             Screen = new MainScreen();
             Input = new ConsoleInput();
+            Output = new ConsoleOutput();
         }
 
         public bool IsDone
@@ -34,16 +35,23 @@ namespace AbrahaG.Game
 
         public Screen Screen { get; set; }
 
+        public Output Output { get; set; }
+
         public void Loop()
         {
             Screen.Draw();
-            Screen = new GameScreen(Map,Player);
+            while (!Console.KeyAvailable)
+            {
+
+            }
+
+            Screen = new GameScreen(Map,Player,Output);
             Screen.AttachInput(Input);
             for (; ; )
             {
                 Input.getInput();
                 Screen.Draw();
-                Thread.Sleep(50); //limit "FPS"
+                Thread.Sleep(25); //limit "FPS"
             }
 
 
